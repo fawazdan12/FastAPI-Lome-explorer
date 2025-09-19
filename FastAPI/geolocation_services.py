@@ -1,8 +1,3 @@
-"""
-Services de géolocalisation pour l'API Gestion d'Événements
-Installation requise: pip install geopy requests django-redis
-"""
-
 import requests
 from geopy.geocoders import Nominatim, GoogleV3
 from geopy.distance import geodesic
