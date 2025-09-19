@@ -16,7 +16,7 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         """Connexion WebSocket"""
         # Groupe global pour tous les événements
-        self.room_group_name = 'events_notifications'
+        self.room_group_name = 'FastAPI_notifications'
         
         # Rejoindre le groupe
         await self.channel_layer.group_add(

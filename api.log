@@ -340,3 +340,4 @@ Watching for file changes with StatReloader
 "GET /fastapi/api/evenements/ HTTP/1.1" 200 13189
 "GET /fastapi/api/ HTTP/1.1" 200 5885
 "GET /fastapi/api/lieux/ HTTP/1.1" 200 13338
+Watching for file changes with StatReloader

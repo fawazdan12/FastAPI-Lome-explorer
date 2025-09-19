@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'FastAPI',
     'CitationAPI',
     'drf_spectacular',
+    'channels'
 ]
 
 MIDDLEWARE = [
