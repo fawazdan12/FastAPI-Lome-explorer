@@ -13,6 +13,8 @@ router.register(r'avis-evenements', views.AvisEvenementViewSet)
 
 # URLs de l'application
 urlpatterns = [
+    # test urls
+    path('test/', views.test_connection, name='test_view'),
     # Authentification
     path('auth/register/', views.register, name='register'),
     path('auth/login/', views.login_view, name='login'),
@@ -41,6 +43,20 @@ urlpatterns = [
     path('geo/validate-lome/', geolocation_views.validate_lome_location, name='validate_lome_location'),
     path('geo/ip-location/', geolocation_views.ip_location, name='ip_location'),
     path('geo/map-data/', geolocation_views.map_data, name='map_data'),
+]
+
+
+# Ces URLs sont gérées par consumers.py et routing.py
+websocket_urlpatterns = [
+    # WebSocket général pour les notifications d'événements
+    # ws://localhost:8000/ws/events/
+    
+    # WebSocket pour les notifications personnelles (utilisateur authentifié)  
+    # ws://localhost:8000/ws/personal/
+    
+    # WebSocket basé sur la localisation
+    # ws://localhost:8000/ws/location/<lat>/<lng>/
+    # ws://localhost:8000/ws/location/<lat>/<lng>/<radius>/
 ]
 
 # URLs générées automatiquement par le routeur :

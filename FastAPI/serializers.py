@@ -13,7 +13,7 @@ class UtilisateurSerializer(serializers.ModelSerializer):
     class Meta:
         model = Utilisateur
         fields = [
-            'id','username','email','tel','date_creation'
+            'id','username','email','tel','date_creation',
             'nombre_lieux','nombre_evenements',
             'is_active'
         ]
@@ -45,7 +45,7 @@ class UtilisateurCreateSerializer(serializers.ModelSerializer):
         try:
             validate_password(attrs['password'])
         except ValidationError as e:
-            raise serializers.ValidationError({'password': e.message})
+            raise serializers.ValidationError({'password': e.messages})
         return attrs
     # surcharge de la methode create 
     def create(seld, validated_data):
@@ -56,13 +56,12 @@ class UtilisateurCreateSerializer(serializers.ModelSerializer):
         user.save()
         return user
     
-class LoginSerializer(serializers.ModelSerializer):
+class LoginSerializer(serializers.Serializer):  
     # SERIALIZER POUR LA CONNEXION
     email = serializers.EmailField()
     password = serializers.CharField(style={'input_type': 'password'})
 
     def validate(self, attrs):
-
         email = attrs.get('email')
         password = attrs.get('password')
 
@@ -72,9 +71,9 @@ class LoginSerializer(serializers.ModelSerializer):
             if not user:
                 raise serializers.ValidationError('Email ou mot de passe incorrect.')
             if not user.is_active:
-                raise serializers.ValidationError('Compte utilisateur desactiver')
+                raise serializers.ValidationError('Compte utilisateur desactivé')
             attrs['user'] = user
-        else :
+        else:
             raise serializers.ValidationError('Email et mot de passe requis')
         
         return attrs
@@ -94,7 +93,7 @@ class LieuSerializer(serializers.ModelSerializer):
             'longitude', 'date_creation', 'proprietaire', 'proprietaire_nom',
             'nombre_evenements', 'moyenne_avis'
         ]
-        read_only_field = ['id', 'date_creation', 'proprietaire']
+        read_only_fields = ['id', 'date_creation', 'proprietaire']
 
     def get_nombre_evenements(self, obj):
         return obj.evenements.count()
@@ -115,11 +114,18 @@ class LieuSerializer(serializers.ModelSerializer):
 class LieuDetailSerializer(serializers.ModelSerializer):
     # SERIALIZER POUR LES DETAILS D'UN LIEU AVEC SES AVIS
 
+    proprietaire_nom = serializers.CharField(source='proprietaire.username', read_only=True)
     avis = serializers.SerializerMethodField()
     evenements_a_venir = serializers.SerializerMethodField()
 
-    class Meta(LieuSerializer.Meta):
-        fields = LieuSerializer.Meta.fields + ['avis', 'evenements_a_venir']
+    class Meta:
+        model = Lieu
+        fields = [
+            'id', 'nom', 'description', 'categorie', 'latitude',
+            'longitude', 'date_creation', 'proprietaire', 'proprietaire_nom',
+            'nombre_evenements', 'moyenne_avis', 'avis', 'evenements_a_venir'
+        ]
+        read_only_fields = ['id', 'date_creation', 'proprietaire']
 
     def get_avis(self, obj):
         avis = obj.avis.all()[:5]
@@ -241,7 +247,7 @@ class AvisEvenementSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'date', 'evenement']
 
     def validate_note(self, value):
-        if 1 <= value <= 5:
+        if not 1 <= value <= 5:
             raise serializers.ValidationError("La note doit être comprise entre 1 et 5.")
         return value
 
@@ -256,7 +262,7 @@ class AvisEvenementSerializer(serializers.ModelSerializer):
         return attrs 
     
     def create(self, validated_data):
-        validated_data['utlisateur'] = self.context['request'].user
+        validated_data['utilisateur'] = self.context['request'].user
         return super().create(validated_data)
     
 class LieuListSerializer(serializers.ModelSerializer):

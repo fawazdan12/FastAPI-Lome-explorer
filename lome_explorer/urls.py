@@ -34,7 +34,7 @@ urlpatterns = [
     path('api/cita/', include(router.urls)),
     
     # API de l'application FastAPI
-    path('fastapi/', include('FastAPI.urls')),
+    path('fastapi/', include('FastAPI.urls'), name='fastapi'),
     
         # Documentation de l'API
         

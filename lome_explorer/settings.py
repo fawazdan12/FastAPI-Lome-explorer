@@ -26,9 +26,47 @@ SECRET_KEY = 'django-insecure-4hii4%gd^q2b%)&xvghhibcs)3elc+_(4h=9^csk)803e8-e1o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1']
-ALLOWED_HOSTS =[]
+ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1', '10.5.51.103']
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://10.0.2.2:3000",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True  # Pour le développement seulement !
+
+CORS_ALLOWED_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 # Application definition
 
@@ -45,7 +83,7 @@ INSTALLED_APPS = [
     'FastAPI',
     'CitationAPI',
     'drf_spectacular',
-    'channels'
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +115,8 @@ TEMPLATES = [
 ]
 
 AUTH_USER_MODEL = 'FastAPI.Utilisateur'
+
+GOOGLE_MAPS_API_KEY = os.environ.get('AIzaSyD9pIxdA4T5A1LYgGqEOMk58v_Xr_-DYhk')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

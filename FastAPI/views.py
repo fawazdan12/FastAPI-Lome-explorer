@@ -31,6 +31,16 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
             return obj.utilisateur == request.user
         return False
 
+# Vues de test
+@api_view(['GET'])
+@permission_classes([])
+def test_connection(request):
+    """Vue de test pour vérifier que l'API fonctionne"""
+    return Response({
+        'message': 'API fonctionne correctement',
+        'timestamp': timezone.now().isoformat(),
+        'status': 'success'
+    })
 
 # Vues d'authentification
 @api_view(['POST'])

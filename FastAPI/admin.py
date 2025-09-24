@@ -34,7 +34,7 @@ class UtilisateurAdmin(UserAdmin):
     def nombre_lieux(self, obj):
         count = obj.lieux.count()
         if count > 0:
-            url = reverse('admin:events_lieu_changelist') + f'?proprietaire__id__exact={obj.id}'
+            url = reverse('admin:FastAPI_lieu_changelist') + f'?proprietaire__id__exact={obj.id}'
             return format_html('<a href="{}">{}</a>', url, count)
         return count
     nombre_lieux.short_description = 'Lieux'
@@ -42,7 +42,7 @@ class UtilisateurAdmin(UserAdmin):
     def nombre_evenements(self, obj):
         count = obj.evenements_organises.count()
         if count > 0:
-            url = reverse('admin:events_evenement_changelist') + f'?organisateur__id__exact={obj.id}'
+            url = reverse('admin:FastAPI_evenement_changelist') + f'?organisateur__id__exact={obj.id}'
             return format_html('<a href="{}">{}</a>', url, count)
         return count
     nombre_evenements.short_description = 'Événements'
@@ -79,7 +79,7 @@ class LieuAdmin(admin.ModelAdmin):
     def nombre_evenements(self, obj):
         count = obj.evenements.count()
         if count > 0:
-            url = reverse('admin:events_evenement_changelist') + f'?lieu__id__exact={obj.id}'
+            url = reverse('admin:FastAPI_evenement_changelist') + f'?lieu__id__exact={obj.id}'
             return format_html('<a href="{}">{}</a>', url, count)
         return count
     nombre_evenements.short_description = 'Événements'
@@ -154,7 +154,7 @@ class EvenementAdmin(admin.ModelAdmin):
     def nombre_avis(self, obj):
         count = obj.avis.count()
         if count > 0:
-            url = reverse('admin:events_avisevenement_changelist') + f'?evenement__id__exact={obj.id}'
+            url = reverse('admin:FastAPI_avisevenement_changelist') + f'?evenement__id__exact={obj.id}'
             return format_html('<a href="{}">{}</a>', url, count)
         return count
     nombre_avis.short_description = 'Avis'
@@ -216,7 +216,7 @@ admin.site.index_title = "Tableau de bord"
 
 # Personnalisation du tableau de bord
 class EventsAdminConfig(AdminConfig):
-    default_site = 'events.admin.EventsAdminSite'
+    default_site = 'FastAPI.admin.EventsAdminSite'
 
 class EventsAdminSite(admin.AdminSite):
     site_header = "Gestion des Événements - Lomé"

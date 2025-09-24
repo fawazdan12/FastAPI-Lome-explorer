@@ -341,3 +341,1088 @@ Watching for file changes with StatReloader
 "GET /fastapi/api/ HTTP/1.1" 200 5885
 "GET /fastapi/api/lieux/ HTTP/1.1" 200 13338
 Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 3333
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3384
+"GET /admin/ HTTP/1.1" 200 13134
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+Not Found: /api/shema
+"GET /api/shema HTTP/1.1" 404 3378
+Not Found: /api/shema/redoc/
+"GET /api/shema/redoc/ HTTP/1.1" 404 3399
+Not Found: /api/shema/redoc/redoc
+"GET /api/shema/redoc/redoc HTTP/1.1" 404 3414
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9052
+Method Not Allowed: /fastapi/auth/register/
+"GET /fastapi/auth/register/ HTTP/1.1" 405 10480
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+"GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+Not Found: /fastapi/ api/
+"GET /fastapi/%20api/ HTTP/1.1" 404 9069
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 3333
+Not Found: /
+"GET / HTTP/1.1" 404 3333
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3384
+"GET /admin/ HTTP/1.1" 200 13134
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 10.0.2.2:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 20083
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 10.0.2.2:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 20083
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 200 17789
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9052
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3384
+Watching for file changes with StatReloader
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+Not Found: /
+"GET / HTTP/1.1" 404 3332
+Not Found: /
+"GET / HTTP/1.1" 404 3332
+C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_explorer\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_explorer\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /fastapi/auth/register/fawaz
+"GET /fastapi/auth/register/fawaz HTTP/1.1" 404 9109
+Not Found: /
+"GET / HTTP/1.1" 404 3332
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_explorer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9052
+"GET /fastapi/api HTTP/1.1" 301 0
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 304 0
+"GET /static/rest_framework/css/default.css HTTP/1.1" 304 0
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 304 0
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 304 0
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/default.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 304 0
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 304 0
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 304 0
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74950
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74801
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74801
+Not Found: /fastapi
+"GET /fastapi HTTP/1.1" 404 3372
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 7701
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 7701
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 7701
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 7701
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 3333
+Not Found: /
+"GET / HTTP/1.1" 404 3333
+"GET /admin/ HTTP/1.1" 200 13134
+Not Found: /fastapi
+"GET /fastapi HTTP/1.1" 404 3372
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 7701
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+Not Found: /fastapi
+"GET /fastapi HTTP/1.1" 404 3372
+"GET /fastapi/api/ HTTP/1.1" 200 245
+"GET /fastapi/api/auth/register HTTP/1.1" 301 0
+Method Not Allowed: /fastapi/api/auth/register/
+"GET /fastapi/api/auth/register/ HTTP/1.1" 405 49
+Internal Server Error: /fastapi/api/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/api/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/api/auth/register HTTP/1.1" 500 74864
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /fastapi/api/auth/register
+"POST /fastapi/api/auth/register HTTP/1.1" 404 20853
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74800
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74801
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74801
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74801
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74801
+"GET /fastapi/auth/register HTTP/1.1" 301 0
+Method Not Allowed: /fastapi/auth/register/
+"GET /fastapi/auth/register/ HTTP/1.1" 405 49
+Internal Server Error: /fastapi/auth/register
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/register/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/register HTTP/1.1" 500 74801
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 200 17789
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 200 17789
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9052
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9052
+Bad Request: /fastapi/auth/register/
+"POST /fastapi/auth/register/ HTTP/1.1" 400 58
+Internal Server Error: /fastapi/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py", line 46, in validate
+    validate_password(attrs['password'])
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\auth\password_validation.py", line 57, in validate_password
+    raise ValidationError(errors)
+django.core.exceptions.ValidationError: ['Ce mot de passe est trop courant.']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py", line 41, in register
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 447, in run_validation
+    value = self.validate(value)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py", line 48, in validate
+    raise serializers.ValidationError({'password': e.message})
+                                                   ^^^^^^^^^
+AttributeError: 'ValidationError' object has no attribute 'message'. Did you mean: 'messages'?
+"POST /fastapi/auth/register/ HTTP/1.1" 500 129109
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /fastapi/auth/register/
+"POST /fastapi/auth/register/ HTTP/1.1" 400 50
+Internal Server Error: /fastapi/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py", line 45, in register
+    'user': UtilisateurSerializer(user).data,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: The field 'nombre_lieux' was declared on serializer UtilisateurSerializer, but has not been included in the 'fields' option.
+"POST /fastapi/auth/register/ HTTP/1.1" 500 149208
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /fastapi/auth/register/
+"POST /fastapi/auth/register/ HTTP/1.1" 400 126
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 200 18532
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9051
+Internal Server Error: /fastapi/auth/login/
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py", line 56, in login_view
+    if serializer.is_valid():
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 497, in to_internal_value
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 380, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\rest_framework\serializers.py", line 1056, in get_fields
+    assert hasattr(self, 'Meta'), (
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Class LoginSerializer missing "Meta" attribute
+"POST /fastapi/auth/login/ HTTP/1.1" 500 22355
+Not Found: /auth/login/
+"POST /auth/login/ HTTP/1.1" 404 3384
+Not Found: /auth/login/
+"POST /auth/login/ HTTP/1.1" 404 3384
+Not Found: /auth/login/
+"POST /auth/login/ HTTP/1.1" 404 3384
+Internal Server Error: /fastapi/auth/login
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/fastapi/auth/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+"POST /fastapi/auth/login HTTP/1.1" 500 74746
+Unsupported Media Type: /fastapi/auth/login/
+"POST /fastapi/auth/login/ HTTP/1.1" 415 61
+C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_explorer\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9322
+Method Not Allowed: /fastapi/auth/login/
+"GET /fastapi/auth/login/ HTTP/1.1" 405 10397
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+"GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+Method Not Allowed: /fastapi/auth/register/
+"GET /fastapi/auth/register/ HTTP/1.1" 405 10418
+Method Not Allowed: /fastapi/auth/register/
+"GET /fastapi/auth/register/ HTTP/1.1" 405 10418
+Unsupported Media Type: /fastapi/auth/login/
+"POST /fastapi/auth/login/ HTTP/1.1" 415 61
+Unsupported Media Type: /fastapi/auth/login/
+"POST /fastapi/auth/login/ HTTP/1.1" 415 61
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9322
+"GET /fastapi/test/ HTTP/1.1" 200 10187
+Not Found: /auth/register/
+"POST /auth/register/ HTTP/1.1" 404 3393
+"POST /fastapi/auth/register/ HTTP/1.1" 201 271
+Not Found: /ws/events/
+"GET /ws/events/ HTTP/1.1" 404 3380
+"GET /fastapi/auth/profile/ HTTP/1.1" 200 211
+Not Found: /ws/events/
+"GET /ws/events/ HTTP/1.1" 404 3380
+"GET /fastapi/auth/profile/ HTTP/1.1" 200 211
+Not Found: /auth/profile/
+"GET /auth/profile/ HTTP/1.1" 404 3389
+Not Found: /auth/logout/
+"POST /auth/logout/ HTTP/1.1" 404 3387
+Not Found: /auth/login/
+"POST /auth/login/ HTTP/1.1" 404 3384
+Not Found: /auth/register/
+"POST /auth/register/ HTTP/1.1" 404 3393
+Not Found: /auth/register/
+"POST /auth/register/ HTTP/1.1" 404 3393
+Watching for file changes with StatReloader
+Not Found: /auth/register/
+"POST /auth/register/ HTTP/1.1" 404 3393
+"GET /fastapi/api/ HTTP/1.1" 200 10657
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 200 19265
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9322
+Not Found: /fastapi/
+"GET /fastapi/ HTTP/1.1" 404 9322
+"GET /fastapi/test/ HTTP/1.1" 200 10187
+"GET /fastapi/test/ HTTP/1.1" 200 10187
+"GET /fastapi/auth/login HTTP/1.1" 301 0
+Method Not Allowed: /fastapi/auth/login/
+"GET /fastapi/auth/login/ HTTP/1.1" 405 10397
+"POST /fastapi/auth/login/ HTTP/1.1" 200 271
+Not Found: /ws/events/
+"GET /ws/events/ HTTP/1.1" 404 3380
+"GET /fastapi/api/lieux/ HTTP/1.1" 200 52
+"GET /fastapi/api/evenements/?a_venir=true HTTP/1.1" 200 52
+Internal Server Error: /fastapi/geo/detect-location/
+"GET /fastapi/geo/detect-location/ HTTP/1.1" 500 276
+"GET /fastapi/auth/profile/ HTTP/1.1" 200 211
+"GET /fastapi/auth/profile/ HTTP/1.1" 200 211
+Not Found: /fastapi/ws/events/
+"GET /fastapi/ws/events/ HTTP/1.1" 404 9351
+"GET /fastapi/api/evenements/?a_venir=true HTTP/1.1" 200 52
+"GET /fastapi/api/lieux/ HTTP/1.1" 200 52
+"GET /fastapi/auth/profile/ HTTP/1.1" 200 211
+Not Found: /fastapi/ws/events/
+"GET /fastapi/ws/events/ HTTP/1.1" 404 9351
+"GET /fastapi/api/lieux/ HTTP/1.1" 200 52
+"GET /fastapi/api/evenements/?a_venir=true HTTP/1.1" 200 52
+Bad Request: /fastapi/api/lieux/
+"POST /fastapi/api/lieux/ HTTP/1.1" 400 197
+Watching for file changes with StatReloader
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 200 19265
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+Bad Request: /fastapi/api/lieux/
+"POST /fastapi/api/lieux/ HTTP/1.1" 400 197
+Bad Request: /fastapi/api/lieux/
+"POST /fastapi/api/lieux/ HTTP/1.1" 400 197
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /fastapi/
+Method Not Allowed: /fastapi/auth/register/
+Not Found: /test
+Not Found: /fastapi/
+Not Found: /fastapi/test
+Not Found: /fastapi/test
+Not Found: /fastapi/test
+Not Found: /fastapi/t
+Not Found: /fastapi/
+Not Found: /
+Not Found: /fastapi/
+Not Found: /fastapi/
+Watching for file changes with StatReloader
+"GET /fastapi/auth/profile/ HTTP/1.1" 200 211
+Not Found: /fastapi/ws/events/
+"GET /fastapi/ws/events/ HTTP/1.1" 404 9345
+"GET /fastapi/api/evenements/?a_venir=true HTTP/1.1" 200 52
+"GET /fastapi/api/lieux/ HTTP/1.1" 200 52
+"GET /fastapi/api/lieux/ HTTP/1.1" 200 52
+Bad Request: /fastapi/geo/lieux-proximite/
+"GET /fastapi/geo/lieux-proximite/?lat=37.4219983&lng=-122.084&radius=16.0 HTTP/1.1" 400 220
+Bad Request: /fastapi/geo/evenements-proximite/
+"GET /fastapi/geo/evenements-proximite/?lat=37.4219983&lng=-122.084&radius=24.0 HTTP/1.1" 400 220
+"GET /admin/ HTTP/1.1" 200 13134
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 3384
+"GET /admin/FastAPI/lieu/ HTTP/1.1" 200 14718
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /admin/FastAPI/lieu/add/ HTTP/1.1" 200 18212
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"POST /admin/FastAPI/lieu/add/ HTTP/1.1" 200 18754
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"POST /admin/FastAPI/lieu/add/ HTTP/1.1" 200 18739
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"POST /admin/FastAPI/lieu/add/ HTTP/1.1" 302 0
+"GET /admin/FastAPI/lieu/ HTTP/1.1" 200 18079
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+"GET /admin/FastAPI/evenement/ HTTP/1.1" 200 14793
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /admin/FastAPI/evenement/add/ HTTP/1.1" 200 19717
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /static/admin/img/calendar-icons.svg HTTP/1.1" 200 2455
+"POST /admin/FastAPI/evenement/add/ HTTP/1.1" 302 0
+"GET /admin/FastAPI/evenement/ HTTP/1.1" 200 18184
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /admin/FastAPI/evenement/ HTTP/1.1" 200 17911
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+"GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 14156
+Internal Server Error: /admin/FastAPI/utilisateur/
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'nombre_lieux'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Utilisateur has no field named 'nombre_lieux'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py", line 37, in nombre_lieux
+    url = reverse('admin:events_lieu_changelist') + f'?proprietaire__id__exact={obj.id}'
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'events_lieu_changelist' not found. 'events_lieu_changelist' is not a valid view function or pattern name.
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 500 411847
+"GET /admin/authtoken/tokenproxy/ HTTP/1.1" 200 14156
+"GET /admin/FastAPI/evenement/ HTTP/1.1" 200 17911
+"GET /admin/FastAPI/evenement/add/ HTTP/1.1" 200 19717
+"GET /admin/FastAPI/evenement/ HTTP/1.1" 200 17911
+"GET /admin/ HTTP/1.1" 200 13919
+Internal Server Error: /admin/FastAPI/utilisateur/
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\db\models\options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'nombre_lieux'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\db\models\options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Utilisateur has no field named 'nombre_lieux'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\template\library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\templatetags\admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\contrib\admin\utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py", line 37, in nombre_lieux
+    url = reverse('admin:events_lieu_changelist') + f'?proprietaire__id__exact={obj.id}'
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\fawaz\Documents\Projects Django\lome explorer\lome_env\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'events_lieu_changelist' not found. 'events_lieu_changelist' is not a valid view function or pattern name.
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 500 411826
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 13919
+"GET /admin/ HTTP/1.1" 200 13919
+"GET /admin/FastAPI/evenement/ HTTP/1.1" 200 17911
+"GET /admin/ HTTP/1.1" 200 13919
+"GET /admin/FastAPI/utilisateur/ HTTP/1.1" 200 19462
+"GET /admin/jsi18n/ HTTP/1.1" 200 8634
+Unsupported Media Type: /fastapi/auth/login/
+"POST /fastapi/auth/login/ HTTP/1.1" 415 61
+"POST /fastapi/auth/login/ HTTP/1.1" 200 271
+Forbidden: /fastapi/auth/logout/
+"POST /fastapi/auth/logout/ HTTP/1.1" 403 45
+Forbidden: /fastapi/auth/logout/
+"POST /fastapi/auth/logout/ HTTP/1.1" 403 45
+Forbidden: /fastapi/auth/logout/
+"POST /fastapi/auth/logout/ HTTP/1.1" 403 45
+Forbidden: /fastapi/auth/login/
+"POST /fastapi/auth/login/ HTTP/1.1" 403 45
+"GET /fastapi/auth/profile/ HTTP/1.1" 200 211
+Not Found: /fastapi/ws/events/
+"GET /fastapi/ws/events/ HTTP/1.1" 404 9345
+"GET /fastapi/api/evenements/?a_venir=true HTTP/1.1" 200 236
+"GET /fastapi/api/lieux/ HTTP/1.1" 200 229
+Bad Request: /fastapi/geo/lieux-proximite/
+"GET /fastapi/geo/lieux-proximite/?lat=37.4219983&lng=-122.084&radius=10.0 HTTP/1.1" 400 220
+Bad Request: /fastapi/geo/evenements-proximite/
+"GET /fastapi/geo/evenements-proximite/?lat=37.4219983&lng=-122.084&radius=15.0 HTTP/1.1" 400 220
+Bad Request: /fastapi/geo/evenements-proximite/
+Bad Request: /fastapi/geo/lieux-proximite/
+"GET /fastapi/geo/lieux-proximite/?lat=37.4219983&lng=-122.084&radius=10.0 HTTP/1.1" 400 220
+"GET /fastapi/geo/evenements-proximite/?lat=37.4219983&lng=-122.084&radius=15.0 HTTP/1.1" 400 220
+Bad Request: /fastapi/api/lieux/
+"POST /fastapi/api/lieux/ HTTP/1.1" 400 46
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\fawaz\Documents\Projects Django\lome explorer\FastAPI\serializers.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /fastapi/api/lieux/ HTTP/1.1" 201 326
+Bad Request: /fastapi/api/lieux/
+"POST /fastapi/api/lieux/ HTTP/1.1" 400 152
+Bad Request: /fastapi/api/lieux/
+"POST /fastapi/api/lieux/ HTTP/1.1" 400 152
+"POST /fastapi/auth/logout/ HTTP/1.1" 200 35
+"POST /fastapi/auth/login/ HTTP/1.1" 200 271
+"GET /fastapi/api/evenements/?a_venir=true HTTP/1.1" 200 236
+Bad Request: /fastapi/geo/evenements-proximite/
+"GET /fastapi/geo/evenements-proximite/?lat=37.4219983&lng=-122.084&radius=15.0 HTTP/1.1" 400 220
+Bad Request: /fastapi/geo/lieux-proximite/
+Bad Request: /fastapi/geo/lieux-proximite/
+Bad Request: /fastapi/geo/lieux-proximite/
+Bad Request: /fastapi/geo/evenements-proximite/
+Bad Request: /fastapi/geo/evenements-proximite/
+"GET /fastapi/geo/lieux-proximite/?lat=37.4219983&lng=-122.084&radius=10.0 HTTP/1.1" 400 220
+"GET /fastapi/geo/lieux-proximite/?lat=37.4219983&lng=-122.084&radius=10.0 HTTP/1.1" 400 220
+"GET /fastapi/geo/lieux-proximite/?lat=37.4219983&lng=-122.084&radius=10.0 HTTP/1.1" 400 220
+"GET /fastapi/geo/evenements-proximite/?lat=37.4219983&lng=-122.084&radius=15.0 HTTP/1.1" 400 220
+"GET /fastapi/geo/evenements-proximite/?lat=37.4219983&lng=-122.084&radius=15.0 HTTP/1.1" 400 220
