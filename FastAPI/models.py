@@ -33,7 +33,7 @@ class Lieu(models.Model):
         decimal_places=7,
         validators=[MinValueValidator(-90), MaxValueValidator(90)]
     )
-    longitude = models.DecimalField(  # Corrigé de "logitude" à "longitude"
+    longitude = models.DecimalField(
         max_digits=10, 
         decimal_places=7,
         validators=[MinValueValidator(-180), MaxValueValidator(180)]

@@ -15,15 +15,17 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
     
     async def connect(self):
         """Connexion WebSocket"""
+        logger.info("🔌 NOUVELLE CONNEXION WEBSOCKET")
         # Groupe global pour tous les événements
-        self.room_group_name = 'FastAPI_notifications'
+        self.room_group_name = 'events_notifications'
         
         # Rejoindre le groupe
         await self.channel_layer.group_add(
             self.room_group_name,
             self.channel_name
         )
-        
+        print(f"✅ Ajouté au groupe: {self.room_group_name}")
+        print(f"✅ Channel layer: {self.channel_layer}")
         await self.accept()
         
         # Log de connexion
@@ -35,9 +37,12 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
             'message': 'Connexion WebSocket établie avec succès',
             'timestamp': timezone.now().isoformat()
         }))
+        print("✅ Message de bienvenue envoyé")
+        print("=" * 80)
     
     async def disconnect(self, close_code):
         """Déconnexion WebSocket"""
+        logger.info(f"🔌 DÉCONNEXION: {self.channel_name}, code: {close_code}")
         # Quitter le groupe
         await self.channel_layer.group_discard(
             self.room_group_name,
@@ -48,6 +53,7 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
     
     async def receive(self, text_data):
         """Recevoir des messages du client"""
+        logger.info(f"📩 MESSAGE REÇU: {text_data}")
         try:
             data = json.loads(text_data)
             message_type = data.get('type')
@@ -58,6 +64,7 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
                     'type': 'pong',
                     'timestamp': timezone.now().isoformat()
                 }))
+                logger.info("📤 PONG ENVOYÉ")
             
             elif message_type == 'subscribe_location':
                 # S'abonner aux événements d'une zone géographique
@@ -126,15 +133,36 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
     # Handlers pour les différents types de notifications
     async def new_event_notification(self, event):
         """Notification pour un nouvel événement"""
-        await self.send(text_data=json.dumps({
+        print("=" * 80)
+        print("🔔 new_event_notification APPELÉE !")
+        print(f"   Event data: {event}")
+        print("=" * 80)
+        
+        logger.info("🔔 new_event_notification APPELÉE !")
+        logger.info(f"   Event: {event}")
+        
+        # Préparer le message pour le client
+        message = {
             'type': 'new_event',
             'event': event['event_data'],
             'message': f"Nouvel événement: {event['event_data']['nom']}",
             'timestamp': timezone.now().isoformat()
-        }))
+        }
+        
+        print(f"📤 Envoi au client Flutter: {message}")
+        logger.info(f"📤 Envoi au client Flutter")
+        
+        # Envoyer au client WebSocket
+        await self.send(text_data=json.dumps(message))
+        
+        print("✅ Message envoyé au client !")
+        print("=" * 80)
+        logger.info("✅ Message envoyé au client Flutter")
     
     async def event_updated_notification(self, event):
         """Notification pour un événement modifié"""
+        print("🔔 event_updated_notification APPELÉE")
+        logger.info("🔔 event_updated_notification APPELÉE")
         await self.send(text_data=json.dumps({
             'type': 'event_updated',
             'event': event['event_data'],
@@ -144,6 +172,8 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
     
     async def event_cancelled_notification(self, event):
         """Notification pour un événement annulé"""
+        print("🔔 event_cancelled_notification APPELÉE")
+        logger.info("🔔 event_cancelled_notification APPELÉE")
         await self.send(text_data=json.dumps({
             'type': 'event_cancelled',
             'event': event['event_data'],
@@ -153,6 +183,8 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
     
     async def new_place_notification(self, event):
         """Notification pour un nouveau lieu"""
+        print("🔔 new_place_notification APPELÉE")
+        logger.info("🔔 new_place_notification APPELÉE")
         await self.send(text_data=json.dumps({
             'type': 'new_place',
             'place': event['place_data'],
@@ -162,6 +194,8 @@ class EventNotificationConsumer(AsyncWebsocketConsumer):
     
     async def proximity_event_notification(self, event):
         """Notification pour un événement à proximité"""
+        print("🔔 proximity_event_notification APPELÉE")
+        logger.info("🔔 proximity_event_notification APPELÉE")
         await self.send(text_data=json.dumps({
             'type': 'proximity_event',
             'event': event['event_data'],
@@ -209,9 +243,12 @@ class PersonalNotificationConsumer(AsyncWebsocketConsumer):
     @database_sync_to_async
     def get_unread_notifications(self):
         """Récupérer les notifications non lues"""
-        # Ici, vous pouvez implémenter un système de notifications en base
-        # Pour l'exemple, on retourne une liste vide
-        return []
+        try:
+            utilisateur = Utilisateur.objects.get(id=self.user.id)
+            notifications = utilisateur.notifications.filter(lue=False).order_by('-date_creation')
+            return [notif.to_dict() for notif in notifications]
+        except Utilisateur.DoesNotExist:
+            return []
     
     async def send_unread_notifications(self):
         """Envoyer les notifications non lues"""

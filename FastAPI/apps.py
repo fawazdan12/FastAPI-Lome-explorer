@@ -7,8 +7,9 @@ class FastapiConfig(AppConfig):
     
     def ready(self):
         """Méthode appelée quand l'app est prête"""
-        # Importer les signaux pour les enregistrer
+        
         try:
+            import FastAPI.signals  
             print("✅ Signaux WebSocket chargés avec succès")
         except ImportError as e:
             print(f"❌ Erreur lors du chargement des signaux: {e}")
@@ -21,8 +22,7 @@ class FastapiConfig(AppConfig):
         try:
             # Ici vous pouvez configurer Celery Beat ou d'autres tâches périodiques
             # Par exemple, pour les rappels d'événements
+
             pass
         except Exception as e:
             print(f"⚠️  Avertissement tâches périodiques: {e}")
-
-

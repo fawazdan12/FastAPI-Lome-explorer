@@ -13,7 +13,13 @@ channel_layer = get_channel_layer()
 
 def send_to_websocket(group_name, message_type, data):
     """Fonction utilitaire pour envoyer des messages WebSocket"""
+    print(f"🔧 send_to_websocket appelée:")
+    print(f"   Groupe: {group_name}")
+    print(f"   Type: {message_type}")
+    print(f"   Data keys: {data.keys()}")
     try:
+        print(f"   Channel layer: {channel_layer}")
+        print(f"   Préparation du message...")
         async_to_sync(channel_layer.group_send)(
             group_name,
             {
@@ -21,7 +27,12 @@ def send_to_websocket(group_name, message_type, data):
                 **data
             }
         )
+        print(f"✅ Message envoyé au groupe {group_name}")
+        logger.info(f"✅ Message envoyé au groupe {group_name}")
     except Exception as e:
+        print(f"❌ ERREUR dans send_to_websocket: {e}")
+        import traceback
+        traceback.print_exc()
         logger.error(f"Erreur envoi WebSocket vers {group_name}: {e}")
 
 
@@ -34,14 +45,48 @@ def evenement_created_or_updated(sender, instance, created, **kwargs):
     
     if created:
         # Nouvel événement créé
+        print("=" * 80)
+        print(f"🔔 SIGNAL POST_SAVE DÉCLENCHÉ: {instance.nom}")
+        print(f"   ID: {instance.id}")
+        print(f"   Created: {created}")
+        print("=" * 80)
+
         logger.info(f"Nouvel événement créé: {instance.nom}")
         
+        # Vérifier le channel layer
+        if channel_layer is None:
+            print("❌ ERREUR: channel_layer est None !")
+            logger.error("❌ channel_layer est None")
+            return
+        
+        print(f"✅ Channel layer: {channel_layer}")
+        
+        # Sérialiser l'événement
+        event_data = EvenementListSerializer(instance).data
+        
+        print(f"📦 Event data sérialisé: {event_data}")
+        
         # Notification globale
-        send_to_websocket(
-            'events_notifications',
-            'new_event_notification',
-            {'event_data': event_data}
-        )
+        try:
+            print(f"📤 Envoi vers groupe: events_notifications")
+            print(f"📤 Type de message: new_event_notification")
+            
+            send_to_websocket(
+                'events_notifications',
+                'new_event_notification',
+                {'event_data': event_data}
+            )
+            
+            print("✅ send_to_websocket exécuté sans erreur")
+            print("=" * 80)
+            
+        except Exception as e:
+            print(f"❌ ERREUR lors de send_to_websocket: {e}")
+            print(f"❌ Type d'erreur: {type(e)}")
+            import traceback
+            traceback.print_exc()
+            print("=" * 80)
+            logger.error(f"❌ Erreur WebSocket: {e}")
         
         # Notifications basées sur la localisation
         send_location_based_notifications(instance, event_data, 'new_event')

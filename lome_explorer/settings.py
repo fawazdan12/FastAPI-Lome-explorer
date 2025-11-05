@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,18 +23,46 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
+SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-4hii4%gd^q2b%)&xvghhibcs)3elc+_(4h=9^csk)803e8-e1o')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split(',')
+
+# Base de données depuis variable d'environnement
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'lome_explorer_db'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'Doubidjinadey'),
+        'HOST': os.getenv('DB_HOST', 'db'),
+        'PORT': os.getenv('DB_PORT', '5432'),
+    }
+}
+
+# Redis depuis variable d'environnement
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.pubsub.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.getenv('REDIS_URL', 'redis://redis:6379/0')],
+        },
+    },
+}
+
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-4hii4%gd^q2b%)&xvghhibcs)3elc+_(4h=9^csk)803e8-e1o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1', '10.5.51.103']
+ALLOWED_HOSTS = ['10.0.2.2', 'localhost', '127.0.0.1', '10.5.51.103', '10.53.111.43', '10.5.49.39']
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://10.0.2.2:3000",
+    "http://10.0.2.2:8000",
+    "http://10.53.111.43:8000",
+    "http://10.5.49.39",
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True  # Pour le développement seulement !
@@ -59,11 +90,22 @@ CORS_ALLOW_METHODS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [('127.0.0.1', 6379)],
+#         },
+#     },
+# }
+
+# Configuration Channel Layers (IN MEMORY pour tester)
 CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
+    "default": {
+        "BACKEND": "channels_redis.pubsub.RedisChannelLayer",
+        "CONFIG": {
+            # 'redis' correspond au nom du service dans docker-compose.yml
+            "hosts": [("redis", 6379)], 
         },
     },
 }
@@ -71,6 +113,8 @@ CHANNEL_LAYERS = {
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
+    'channels',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,7 +127,7 @@ INSTALLED_APPS = [
     'FastAPI',
     'CitationAPI',
     'drf_spectacular',
-    'channels',
+    
 ]
 
 MIDDLEWARE = [
@@ -116,7 +160,7 @@ TEMPLATES = [
 
 AUTH_USER_MODEL = 'FastAPI.Utilisateur'
 
-GOOGLE_MAPS_API_KEY = os.environ.get('AIzaSyD9pIxdA4T5A1LYgGqEOMk58v_Xr_-DYhk')
+GOOGLE_MAPS_API_KEY = os.environ.get('AIzaSyAYTYJMRwQtEGz3KxGB2xS4BGLjo9j0kfQ')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -148,7 +192,7 @@ REST_FRAMEWORK = {
 }
 
 WSGI_APPLICATION = 'lome_explorer.wsgi.application'
-
+ASGI_APPLICATION = 'lome_explorer.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

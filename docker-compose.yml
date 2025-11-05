@@ -1,0 +1,86 @@
+version: '3.8'
+
+services:
+  # Base de données PostgreSQL
+  db:
+    image: postgres:15-alpine
+    container_name: lome_explorer_db
+    environment:
+      POSTGRES_DB: lome_explorer_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Doubidjinadey
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - lome_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis pour les WebSockets (Channels)
+  redis:
+    image: redis:7-alpine
+    container_name: lome_explorer_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - lome_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Application Django
+  web:
+    build: .
+    container_name: lome_explorer_web
+    command: daphne -b 0.0.0.0 -p 8000 lome_explorer.asgi:application
+    volumes:
+      - .:/app
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=False
+      - DATABASE_URL=postgresql://postgres:Doubidjinadey@db:5432/lome_explorer_db
+      - REDIS_URL=redis://redis:6379/0
+      - ALLOWED_HOSTS=localhost,127.0.0.1,10.0.2.2
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - lome_network
+    restart: unless-stopped
+
+  # Nginx (optionnel, pour la production)
+  nginx:
+    image: nginx:alpine
+    container_name: lome_explorer_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - static_volume:/app/staticfiles:ro
+      - media_volume:/app/media:ro
+    depends_on:
+      - web
+    networks:
+      - lome_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+
+networks:
+  lome_network:
+    driver: bridge

@@ -14,6 +14,9 @@ from .serializers import (
     EvenementSerializer, EvenementDetailSerializer, EvenementListSerializer,
     AvisLieuSerializer, AvisEvenementSerializer
 )
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class IsOwnerOrReadOnly(permissions.BasePermission):
@@ -158,12 +161,12 @@ class LieuViewSet(viewsets.ModelViewSet):
                 status=status.HTTP_400_BAD_REQUEST
             )
         
-        # Calcul approximatif de proximité (pour une implémentation plus précise, utiliser PostGIS)
+        # Calcul approximatif de proximité
         lat_float = float(lat)
         lng_float = float(lng)
         rayon_float = float(rayon)
         
-        # Approximation simple (à améliorer avec PostGIS)
+        # Approximation simple
         delta = rayon_float / 111.0  # 1 degré ≈ 111 km
         
         queryset = self.get_queryset().filter(
@@ -178,7 +181,7 @@ class LieuViewSet(viewsets.ModelViewSet):
 
 
 class EvenementViewSet(viewsets.ModelViewSet):
-    """ViewSet pour les événements"""
+    """ViewSet pour les événements - CORRIGÉ"""
     queryset = Evenement.objects.all().order_by('-date_debut')
     permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
     
@@ -186,11 +189,14 @@ class EvenementViewSet(viewsets.ModelViewSet):
         if self.action == 'list':
             return EvenementListSerializer
         elif self.action == 'retrieve':
-            return EvenementDetailSerializer
+            # ✅ CORRECTION: Utiliser EvenementSerializer au lieu de EvenementDetailSerializer
+            return EvenementSerializer
         return EvenementSerializer
     
     def get_queryset(self):
-        queryset = Evenement.objects.all().order_by('-date_debut')
+        queryset = Evenement.objects.select_related(
+            'lieu', 'organisateur'
+        ).prefetch_related('avis').order_by('-date_debut')
         
         # Filtres
         lieu = self.request.query_params.get('lieu')
@@ -227,13 +233,41 @@ class EvenementViewSet(viewsets.ModelViewSet):
         
         return queryset
     
+    def retrieve(self, request, *args, **kwargs):
+        """
+        ✅ CORRECTION: Surcharge de retrieve() pour une meilleure gestion des erreurs
+        """
+        try:
+            instance = self.get_object()
+            serializer = self.get_serializer(instance)
+            return Response(serializer.data)
+        except Evenement.DoesNotExist:
+            logger.error(f"Événement non trouvé: {kwargs.get('pk')}")
+            return Response(
+                {'error': 'Événement non trouvé'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Exception as e:
+            logger.error(f"Erreur retrieve événement: {str(e)}", exc_info=True)
+            return Response(
+                {'error': 'Erreur lors de la récupération de l\'événement'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+    
     @action(detail=True, methods=['get'])
     def avis(self, request, pk=None):
         """Récupérer tous les avis d'un événement"""
-        evenement = self.get_object()
-        avis = evenement.avis.all().order_by('-date')
-        serializer = AvisEvenementSerializer(avis, many=True)
-        return Response(serializer.data)
+        try:
+            evenement = self.get_object()
+            avis = evenement.avis.all().order_by('-date')
+            serializer = AvisEvenementSerializer(avis, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            logger.error(f"Erreur récupération avis: {str(e)}")
+            return Response(
+                {'error': 'Erreur lors de la récupération des avis'},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
     
     @action(detail=False, methods=['get'], permission_classes=[])
     def aujourd_hui(self, request):
@@ -270,6 +304,72 @@ class AvisLieuViewSet(viewsets.ModelViewSet):
         if lieu_id:
             queryset = queryset.filter(lieu__id=lieu_id)
         return queryset
+    
+    def create(self, request, *args, **kwargs):
+        """Création d'un avis avec logs détaillés"""
+        print("=" * 80)
+        print("🔍 AvisLieuViewSet.create() appelée")
+        print(f"   User: {request.user}")
+        print(f"   User authenticated: {request.user.is_authenticated}")
+        print(f"   Request data: {request.data}")
+        print(f"   Request headers: {dict(request.headers)}")
+        print("=" * 80)
+        
+        try:
+            serializer = self.get_serializer(data=request.data)
+            print(f"🔍 Serializer créé: {serializer}")
+            
+            print(f"🔍 Validation en cours...")
+            is_valid = serializer.is_valid(raise_exception=False)
+            print(f"   is_valid: {is_valid}")
+            
+            if not is_valid:
+                print(f"   ❌ Erreurs de validation: {serializer.errors}")
+                return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            
+            print(f"   ✅ Validation OK")
+            print(f"   validated_data: {serializer.validated_data}")
+            
+            print(f"🔍 Sauvegarde en cours...")
+            self.perform_create(serializer)
+            
+            print(f"   ✅ Avis créé avec succès")
+            headers = self.get_success_headers(serializer.data)
+            print("=" * 80)
+            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+            
+        except Exception as e:
+            print(f"❌ Exception dans create(): {e}")
+            print(f"❌ Type: {type(e)}")
+            import traceback
+            traceback.print_exc()
+            print("=" * 80)
+            raise
+    
+    @action(detail=False, methods=['get'], permission_classes=[IsAuthenticated])
+    def mon_avis(self, request):
+        """✅ NOUVEAU: Endpoint pour vérifier si l'utilisateur a déjà donné un avis"""
+        lieu_id = request.query_params.get('lieu_id')
+        
+        if not lieu_id:
+            return Response({
+                'error': 'lieu_id requis'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            avis = AvisLieu.objects.get(
+                utilisateur=request.user,
+                lieu__id=lieu_id
+            )
+            return Response({
+                'has_avis': True,
+                'avis': AvisLieuSerializer(avis).data
+            })
+        except AvisLieu.DoesNotExist:
+            return Response({
+                'has_avis': False,
+                'avis': None
+            })
 
 
 class AvisEvenementViewSet(viewsets.ModelViewSet):
@@ -334,7 +434,6 @@ def evenements_tendances(request):
     return Response(serializer.data)
 
 
-# Vue pour les données d'une ville (spécifique à Lomé)
 @api_view(['GET'])
 @permission_classes([])
 def donnees_lome(request):
