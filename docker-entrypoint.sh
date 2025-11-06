@@ -3,30 +3,51 @@ set -e
 
 echo "🚀 Démarrage de l'application Lomé Explorer..."
 
-# Attendre que PostgreSQL soit prêt
-echo "⏳ Attente de PostgreSQL..."
-until PGPASSWORD=$POSTGRES_PASSWORD psql -h "db" -U "postgres" -d "lome_explorer_db" -c '\q'; do
-  >&2 echo "PostgreSQL indisponible - attente..."
-  sleep 1
-done
+# Variables d'environnement avec valeurs par défaut
+DB_HOST="${DB_HOST:-db}"
+DB_USER="${DB_USER:-postgres}"
+DB_NAME="${DB_NAME:-lome_explorer_db}"
+DB_PASSWORD="${DB_PASSWORD:-Doubidjinadey}"
 
+# Export du mot de passe pour psql
+export PGPASSWORD="$DB_PASSWORD"
+
+# Fonction pour tester PostgreSQL
+check_postgres() {
+    psql -h "$DB_HOST" -U "$DB_USER" -d "$DB_NAME" -c '\q' 2>/dev/null
+}
+
+# Fonction pour tester Redis
+check_redis() {
+    redis-cli -h redis ping 2>/dev/null | grep -q PONG
+}
+
+# Attendre PostgreSQL
+echo "⏳ Attente de PostgreSQL ($DB_HOST:5432)..."
+MAX_TRIES=30
+TRIES=0
+until check_postgres; do
+    TRIES=$((TRIES + 1))
+    if [ $TRIES -ge $MAX_TRIES ]; then
+        echo "❌ PostgreSQL n'a pas démarré après $MAX_TRIES tentatives"
+        exit 1
+    fi
+    echo "PostgreSQL indisponible - tentative $TRIES/$MAX_TRIES..."
+    sleep 2
+done
 echo "✅ PostgreSQL est prêt!"
 
-# Attendre que Redis soit prêt
-echo "⏳ Attente de Redis..."
-until redis-cli -h redis ping; do
-  >&2 echo "Redis indisponible - attente..."
-  sleep 1
-done
 
-echo "✅ Redis est prêt!"
+# Créer les répertoires nécessaires
+echo "📁 Création des répertoires..."
+mkdir -p /app/logs /app/staticfiles /app/media
 
 # Appliquer les migrations
 echo "🔄 Application des migrations..."
 python manage.py migrate --noinput
 
 # Créer un superutilisateur si nécessaire
-echo "👤 Création du superutilisateur..."
+echo "👤 Vérification du superutilisateur..."
 python manage.py shell << END
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -39,14 +60,16 @@ END
 
 # Collecter les fichiers statiques
 echo "📦 Collection des fichiers statiques..."
-python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput --clear
 
-# Charger des données de test (optionnel)
-# echo "📊 Chargement des données de test..."
-# python manage.py loaddata fixtures/initial_data.json
-
+echo ""
+echo "═══════════════════════════════════════════════"
 echo "✅ Configuration terminée!"
-echo "🌐 L'application démarre sur le port 8000..."
+echo "🌐 L'application démarre sur http://0.0.0.0:8000"
+echo "🔌 WebSocket disponible sur ws://0.0.0.0:8000/ws/"
+echo "👤 Admin: admin / admin123"
+echo "═══════════════════════════════════════════════"
+echo ""
 
 # Exécuter la commande passée au conteneur
 exec "$@"
