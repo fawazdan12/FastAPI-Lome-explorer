@@ -331,3 +331,122 @@ INFO 2025-11-06 06:09:50,214 consumers 📩 MESSAGE REÇU: {"type":"ping"}
 INFO 2025-11-06 06:09:50,216 consumers 📤 PONG ENVOYÉ
 INFO 2025-11-06 06:10:20,216 consumers 📩 MESSAGE REÇU: {"type":"ping"}
 INFO 2025-11-06 06:10:20,218 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:46:47,278 consumers 🔌 NOUVELLE CONNEXION WEBSOCKET
+INFO 2025-11-06 12:46:47,286 consumers Nouvelle connexion WebSocket: asgispecific.6fa4ffef9e9a4b689e2d1e1ddb2ace5f
+INFO 2025-11-06 12:47:17,722 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:47:17,726 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:48:02,776 consumers 🔌 DÉCONNEXION: asgispecific.6fa4ffef9e9a4b689e2d1e1ddb2ace5f, code: 1006
+INFO 2025-11-06 12:48:02,796 consumers Déconnexion WebSocket: asgispecific.6fa4ffef9e9a4b689e2d1e1ddb2ace5f, code: 1006
+WARNING 2025-11-06 12:50:32,691 log Not Found: /
+WARNING 2025-11-06 12:50:33,529 log Not Found: /favicon.ico
+INFO 2025-11-06 12:54:06,716 consumers 🔌 NOUVELLE CONNEXION WEBSOCKET
+INFO 2025-11-06 12:54:06,721 consumers Nouvelle connexion WebSocket: asgispecific.e98a4e2ecab64bc0a2fa81ba79978367
+INFO 2025-11-06 12:54:37,539 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:54:37,542 consumers 📤 PONG ENVOYÉ
+WARNING 2025-11-06 12:54:52,531 geolocation_services Erreur API IP: Reserved IP Address
+INFO 2025-11-06 12:55:07,454 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:55:07,456 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:55:37,451 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:55:37,452 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:56:07,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:56:07,454 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:56:37,456 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:56:37,458 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:57:07,540 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:57:07,544 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:57:37,458 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:57:37,460 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:58:07,458 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:58:07,461 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:58:37,458 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:58:37,462 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:59:07,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:59:07,455 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 12:59:37,462 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 12:59:37,464 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:00:07,458 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:00:07,460 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:00:37,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:00:37,456 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:01:07,454 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:01:07,456 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:01:37,459 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:01:37,460 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:02:07,460 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:02:07,461 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:02:37,456 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:02:37,457 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:03:07,449 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:03:07,450 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:03:37,457 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:03:37,458 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:04:07,451 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:04:07,452 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:04:37,452 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:04:37,454 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:05:07,452 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:05:07,453 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:05:37,454 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:05:37,456 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:06:07,454 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:06:07,456 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:06:37,449 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:06:37,455 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:07:07,456 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:07:07,457 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:07:37,456 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:07:37,457 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:08:07,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:08:07,455 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:08:37,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:08:37,455 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:09:07,451 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:09:07,454 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:09:37,456 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:09:37,457 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:10:07,450 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:10:07,453 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:10:37,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:10:37,455 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:11:07,451 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:11:07,460 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:11:37,450 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:11:37,455 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:12:07,449 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:12:07,450 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:12:37,454 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:12:37,456 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:13:07,449 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:13:07,450 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:13:37,449 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:13:37,451 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:14:07,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:14:07,455 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:14:37,447 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:14:37,448 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:15:07,446 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:15:07,447 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:15:37,448 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:15:37,449 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:16:07,446 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:16:07,447 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:16:37,453 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:16:37,454 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:17:07,452 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:17:07,454 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:17:37,447 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:17:37,448 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:18:07,452 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:18:07,453 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:18:37,447 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:18:37,448 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:19:05,790 consumers 🔌 DÉCONNEXION: asgispecific.e98a4e2ecab64bc0a2fa81ba79978367, code: 1006
+INFO 2025-11-06 13:19:05,791 consumers Déconnexion WebSocket: asgispecific.e98a4e2ecab64bc0a2fa81ba79978367, code: 1006
+INFO 2025-11-06 13:20:57,832 consumers 🔌 NOUVELLE CONNEXION WEBSOCKET
+INFO 2025-11-06 13:20:57,833 consumers Nouvelle connexion WebSocket: asgispecific.da961bfbf14d46158ba309828dbcc351
+INFO 2025-11-06 13:21:27,891 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:21:27,895 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:21:57,881 consumers 📩 MESSAGE REÇU: {"type":"ping"}
+INFO 2025-11-06 13:21:57,882 consumers 📤 PONG ENVOYÉ
+INFO 2025-11-06 13:21:58,429 consumers 🔌 DÉCONNEXION: asgispecific.da961bfbf14d46158ba309828dbcc351, code: 1006
+INFO 2025-11-06 13:21:58,430 consumers Déconnexion WebSocket: asgispecific.da961bfbf14d46158ba309828dbcc351, code: 1006
